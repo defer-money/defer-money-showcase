@@ -1,3 +1,46 @@
+<script setup lang="ts">
+  let openFaqId: null|number = null;  // To track the currently open FAQ
+
+  function toggleFaq(id: number):void {
+    const faq = document.getElementById(`faq-${id}`);
+    const button = document.getElementById(`button-${id}`);
+    const icon = document.getElementById(`icon-${id}`);
+    const iconBg = document.getElementById(`icon-bg-${id}`);
+    const iconPath = document.getElementById(`icon-path-${id}`);
+    const title = document.getElementById(`title-${id}`);
+    const isOpen = !!faq?.style.display && faq.style.display !== "none";
+    button?.style.setProperty('background-color', isOpen ? 'transparent' : '#F2EBFD');
+    title?.style.setProperty('color', isOpen ? 'white' : '#050020');
+    title?.style.setProperty('opacity', isOpen ? '80%' : '100%');
+    iconBg?.style.setProperty('fill', isOpen ? '#F3F5F6' : '#050020');
+    iconPath?.style.setProperty('fill', isOpen ? "#050020" : '#F3F5F6');
+
+    // Close the currently open FAQ if it's different
+    if (openFaqId && openFaqId !== id) {
+      const openFaq = document.getElementById(`faq-${openFaqId}`);
+      const openButton = document.getElementById(`button-${openFaqId}`);
+      const openedIcon = document.getElementById(`icon-${openFaqId}`);
+      const openedtitle = document.getElementById(`title-${openFaqId}`);
+      const openedIconBg = document.getElementById(`icon-bg-${openFaqId}`);
+      const openedIconPath = document.getElementById(`icon-path-${openFaqId}`);
+      openButton?.style.setProperty('background-color', 'transparent');
+      openedtitle?.style.setProperty('color', 'white');
+      openedtitle?.style.setProperty('opacity', '80%');
+      openFaq?.style.setProperty('display', "none");
+      openedIconBg?.style.setProperty('fill', '#F3F5F6');
+      openedIconPath?.style.setProperty('fill', '#050020');
+      openedIcon?.classList.remove("rotate-45");
+    }
+
+    // Toggle the clicked FAQ
+    faq?.style.setProperty('display', isOpen ? 'none' : 'block');
+    icon?.classList.toggle("rotate-45");
+
+    // Update the open FAQ ID
+    openFaqId = isOpen ? null : id;
+  }
+</script>
+
 <template>
       <!-- FAQ -->
        <section class="flex flex-col my-12 md:mx-12 md:mb-12 md:mt-24 gap-12">
@@ -114,46 +157,3 @@
 
 <style scoped>
 </style>
-
-<script setup>
-  let openFaqId = null;  // To track the currently open FAQ
-
-  function toggleFaq(id) {
-    const faq = document.getElementById(`faq-${id}`);
-    const button = document.getElementById(`button-${id}`);
-    const icon = document.getElementById(`icon-${id}`);
-    const iconBg = document.getElementById(`icon-bg-${id}`);
-    const iconPath = document.getElementById(`icon-path-${id}`);
-    const title = document.getElementById(`title-${id}`);
-    const isOpen = !!faq.style.display && faq.style.display !== "none";
-    button.style.backgroundColor = isOpen ? 'transparent' : '#F2EBFD';
-    title.style.color = isOpen ? 'white' : '#050020';
-    title.style.opacity = isOpen ? '80%' : '100%';
-    iconBg.style.fill = isOpen ? '#F3F5F6' : '#050020';
-    iconPath.style.fill = isOpen ? "#050020" : '#F3F5F6';
-
-    // Close the currently open FAQ if it's different
-    if (openFaqId && openFaqId !== id) {
-      const openFaq = document.getElementById(`faq-${openFaqId}`);
-      const openButton = document.getElementById(`button-${openFaqId}`);
-      const openedIcon = document.getElementById(`icon-${openFaqId}`);
-      const openedtitle = document.getElementById(`title-${openFaqId}`);
-      const openedIconBg = document.getElementById(`icon-bg-${openFaqId}`);
-      const openedIconPath = document.getElementById(`icon-path-${openFaqId}`);
-      openButton.style.backgroundColor = 'transparent';
-      openedtitle.style.color = 'white';
-      openedtitle.style.opacity = '80%';
-      openFaq.style.display = "none";
-      openedIconBg.style.fill = '#F3F5F6';
-      openedIconPath.style.fill = '#050020';
-      openedIcon.classList.remove("rotate-45");
-    }
-
-    // Toggle the clicked FAQ
-    faq.style.display = isOpen ? 'none' : 'block';
-    icon.classList.toggle("rotate-45");
-
-    // Update the open FAQ ID
-    openFaqId = isOpen ? null : id;
-  }
-</script>

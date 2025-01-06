@@ -2,7 +2,7 @@
 import DeferKeyFeatures from './components/DeferKeyFeatures.vue';
 import DeferWorkSection from './components/DeferWorkSection.vue';
 import EarlyAccessFormSection from './components/EarlyAccessForm.vue';
-import FAQ from './components/FAQ.vue';
+import FAQ from './components/FAQs.vue';
 
 </script>
 
