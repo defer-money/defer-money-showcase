@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import DeferCalculationSection from './components/DeferCalculationSection.vue';
 import DeferKeyFeatures from './components/DeferKeyFeatures.vue';
 import DeferWorkSection from './components/DeferWorkSection.vue';
 import EarlyAccessFormSection from './components/EarlyAccessForm.vue';
@@ -7,7 +8,7 @@ import FAQ from './components/FAQs.vue';
 </script>
 
 <template>
-    <main class="flex flex-col max-w-[85rem] self-center">
+    <main class="flex flex-col max-w-[85rem] self-center md:px-0 px-4">
       <!-- Welcome -->
       <section id="welcome" class="flex flex-col items-center md:h-screen bg-[url('src/assets/bg-welcome.png')]">
           <div class="flex justify-start items-start md:justify-between md:items-center md:h-[7rem] md:mx-6 px-[1.5rem] py-4 md:py-5 bg-white bg-opacity-5 max-w-[75rem] w-full rounded-full">
@@ -40,6 +41,8 @@ import FAQ from './components/FAQs.vue';
       <DeferWorkSection />
       <!-- Why defer.money -->
        <DeferKeyFeatures />
+      <!-- Defer Calculator -->
+      <DeferCalculationSection />
       <!-- Early Access -->
       <EarlyAccessFormSection />
       <!-- FAQ -->
