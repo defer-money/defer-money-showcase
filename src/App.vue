@@ -7,7 +7,7 @@ import FAQ from './components/FAQs.vue';
 </script>
 
 <template>
-    <main class="flex flex-col">
+    <main class="flex flex-col max-w-[85rem] self-center">
       <!-- Welcome -->
       <section id="welcome" class="flex flex-col items-center md:h-screen bg-[url('src/assets/bg-welcome.png')]">
           <div class="flex justify-start items-start md:justify-between md:items-center md:h-[7rem] md:mx-6 px-[1.5rem] py-4 md:py-5 bg-white bg-opacity-5 max-w-[75rem] w-full rounded-full">

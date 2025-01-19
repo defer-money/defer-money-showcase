@@ -1,5 +1,40 @@
-<script setup lang="ts">
+<script lang="ts">
+export default {
+  data() {
+    return {
+      formData: {
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        email: '',
+      },
+      submitted: false,
+    };
+  },
+  methods: {
+    async handleSubmit() {
+      console.log('Form Data:', this.formData);
 
+      const data = {
+        values: [this.formData.firstName, this.formData.lastName, this.formData.phoneNumber, this.formData.email],
+      };
+      let result = undefined;
+      try {
+          const response = await fetch(import.meta.env.VITE_GSHEET_URL, {
+              method: 'POST',
+              body: JSON.stringify(data)
+          });
+
+          result = await response.text();
+          // alert(result);  // Show success message
+      } catch (error) {
+          alert('Error: ' + error);
+      }
+
+      this.submitted = result !== undefined; // Show submitted data
+    },
+  },
+};
 </script>
 
 <template>
@@ -15,15 +50,17 @@
               <p class="text-white text-[1.90rem] font-semibold tracking-tight">Fill out the form below</p>
               <p class="text-gray-400 text-lg font-normal tracking-tight">We will get back to you once we are live!</p>
             </div>
-            <div class="flex flex-col gap-6">
-              <div class="flex gap-4 w-full">
-                <input placeholder="First Name" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" />
-                <input placeholder="Last Name" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" />
+            <form @submit.prevent="handleSubmit">
+              <div class="flex flex-col gap-6">
+                <div class="flex gap-4 w-full">
+                  <input v-model="formData.firstName" placeholder="First Name" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" />
+                  <input placeholder="Last Name" v-model="formData.lastName" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" />
+                </div>
+                <input id="phoneNumber" name="phoneNumber" placeholder="PhoneNumber" type="number" minlength="10" maxlength="10" v-model="formData.phoneNumber" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" />
+                <input placeholder="Email Address" type="email" v-model="formData.email" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" />
+                <button class="bg-gradient-to-r from-[#763AF5] to-[#A604F2] rounded-full h-[4.5rem] w-full font-semibold text-[1.25rem]" type="submit">Submit</button>
               </div>
-              <input placeholder="PhoneNumber" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" />
-              <input placeholder="Email Address" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" />
-              <button class="bg-gradient-to-r from-[#763AF5] to-[#A604F2] rounded-full h-[4.5rem] w-full font-semibold text-[1.25rem]">Submit</button>
-            </div>
+          </form>
           </div>
           <img src="../assets/early-access.png" alt="Background" class="hidden lg:block md:max-h-[35rem] md:w-full object-fill" />
         </div>
