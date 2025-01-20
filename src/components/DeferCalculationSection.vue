@@ -1,9 +1,18 @@
 <script lang="ts">
+import Slider from '@vueform/slider';
 import { calculateDeferAmount, calculateEmiAmount, calculateMinDueAmount, currencyConversion } from '../utils/calculate.utils.ts';
+import { reactive } from 'vue';
 
+const vueformSliderState = reactive({
+  value: 30
+})
   export default {
+    components: {
+          Slider,
+        },
     data() {
         return {
+        vueformSliderState,
         amount: 1000,
         emiDifference : '₹782',
         minDueDifference: '₹423',
@@ -29,9 +38,11 @@ import { calculateDeferAmount, calculateEmiAmount, calculateMinDueAmount, curren
     },
     methods: {
         calculate() {
-            this.deferResult = calculateDeferAmount(this.amount);
-            this.emiResult = calculateEmiAmount(this.amount);
-            this.minDueResult = calculateMinDueAmount(this.amount);
+            // Input value from range type is string parse value before calc
+            const amount = parseInt(this.amount.toString(), 10);
+            this.deferResult = calculateDeferAmount(amount);
+            this.emiResult = calculateEmiAmount(amount);
+            this.minDueResult = calculateMinDueAmount(amount);
             this.emiDifference = currencyConversion(this.emiResult.totalRepaymentAmount - this.deferResult.totalRepaymentAmount);
             this.minDueDifference = currencyConversion(this.minDueResult.totalRepaymentAmount - this.deferResult.totalRepaymentAmount)
         },
@@ -50,7 +61,16 @@ import { calculateDeferAmount, calculateEmiAmount, calculateMinDueAmount, curren
                 <p class="font-semibold text-[1.25rem] text-white">Your Bill Amount</p>
                 <p class="font-regular text-[.75rem] text-gray">Enter the amount or use the slider to adjust the value</p>
             </div>
-            <input id="amount" name="amount" @input="calculate" placeholder="Enter Amount" type="number" min="1000" v-model="amount" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" />
+            <input id="amount" name="amount" @input="calculate" placeholder="Enter Amount" type="number" min="1000" max="100000" v-model="amount" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" />
+            <input
+                id="slider"
+                type="range"
+                min="1000"
+                max="100000"
+                v-model="amount"
+                @input="calculate"
+                class="w-full"
+                />
             <div class="flex flex-col gap-4">
               <p class="font-semibold text-[1.25rem] text-white tracking-tight">Defer.Mone<span class="bg-gradient-to-r from-[#FFFFFF] from-0% via-[#763AF5] via-48% to-[#A604F2] to-99% bg-clip-text text-transparent">y Advantage</span></p>
               <div class="gap-4 flex flex-row">
