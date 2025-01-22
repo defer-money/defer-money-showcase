@@ -8,7 +8,7 @@ import FAQ from './components/FAQs.vue';
 </script>
 
 <template>
-    <main class="flex flex-col max-w-[85rem] self-center md:px-0 px-4">
+    <main class="flex flex-col w-full self-center max-w-[85rem]">
       <!-- Welcome -->
       <section id="welcome" class="flex flex-col items-center md:h-screen bg-[url('src/assets/bg-welcome.png')]">
           <div class="flex justify-start items-start md:justify-between md:items-center md:h-[7rem] md:mx-6 px-[1.5rem] py-4 md:py-5 bg-white bg-opacity-5 max-w-[75rem] w-full rounded-full">
@@ -27,7 +27,7 @@ import FAQ from './components/FAQs.vue';
         </div>
       </section>
       <!-- Introducing Section -->
-      <section id="introduction" class="md:h-screen px-6 md:mx-24 md:my-12 gap-12 bg-white bg-opacity-5 md:p-12 rounded-lg">
+      <section id="introduction" class="md:h-screen px-6 md:mx-24 md:my-12 gap-12 bg-white bg-opacity-5 md:p-12 rounded-[1.25rem]">
         <div class="flex w-full flex-col justify-center items-center">
           <p class="font-extralight text-[1.25rem] md:text-[1.4rem] tracking-[0.25rem]">Introducing</p>
           <p class="font-extrabold text-[2rem] md:text-[4rem] tracking-[-0.10rem] text-white">Defer.<span class="text-white bg-gradient-to-r from-[#FFFFFF] from-0% via-[#763AF5] via-48% to-[#A604F2] to-99% bg-clip-text text-transparent">Money</span></p>

@@ -5,7 +5,7 @@
     const fee = Math.round(value * deferMultiplier * gstMultiplier);
     const totalRepayment = value + fee;
 
-    return { fee: currencyConversion(fee), interest: currencyConversion(0), totalRepayment:currencyConversion(totalRepayment), totalRepaymentAmount: totalRepayment }
+    return { fee, interest: 0, totalRepayment: totalRepayment }
   }
   
   export function calculateEmiAmount(value: number) {
@@ -25,7 +25,7 @@
     const interestGstAmount = interest * gstRate;
     const totalRepayment = princialWithInterest + fee + interestGstAmount;
 
-    return { fee: currencyConversion(Math.round(fee)), interest: currencyConversion(Math.round(interest)), totalRepayment: currencyConversion(Math.round(totalRepayment)), totalRepaymentAmount: Math.round(totalRepayment) }
+    return { fee: Math.round(fee), interest: Math.round(interest), totalRepayment: Math.round(totalRepayment) }
   }
 
   export function calculateMinDueAmount(value: number) {
@@ -44,7 +44,7 @@
     const interestWithGst = interest + interestGstAmount;
     const totalRepayment = remaingAmountRepayment + fee + interestGstAmount;
 
-    return { fee: currencyConversion(Math.round(fee)), interest: currencyConversion(Math.round(interestWithGst)), totalRepayment: currencyConversion(Math.round(totalRepayment)), totalRepaymentAmount: Math.round(totalRepayment)  }
+    return { fee: Math.round(fee), interest: Math.round(interestWithGst), totalRepayment: Math.round(totalRepayment)  }
   }
 
   export const currencyConversion = (amount: number, currencyIso = 'INR') => {

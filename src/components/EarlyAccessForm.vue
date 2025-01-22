@@ -44,7 +44,7 @@ export default {
           <p class="font-extrabold text-[2rem] md:text-[4rem] text-white tracking-tight">Get Earl<span class="bg-gradient-to-r from-[#FFFFFF] from-0% via-[#763AF5] via-48% to-[#A604F2] to-99% bg-clip-text text-transparent">y Access</span></p>
           <p class="font-medium text-base md:text-2xl text-center text-white text-opacity-70 tracking-tight">Join the waiting list to experience payment freedom with Defer.Money</p>
         </div>
-        <div class="flex w-full bg-white bg-opacity-5 md:p-6 gap-6">
+        <div class="flex w-full bg-white bg-opacity-5 md:p-6 gap-6 rounded-[1.25rem]">
           <div class="flex flex-col w-full p-6 gap-10 justify-center">
             <div>
               <p class="text-white text-[1.90rem] font-semibold tracking-tight">Fill out the form below</p>
