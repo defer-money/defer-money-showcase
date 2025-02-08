@@ -9,4 +9,7 @@ export default defineConfig({
       requireReturnsDefault: true
     }
   },
+  server: {
+    port: 5174,
+  }
 })
