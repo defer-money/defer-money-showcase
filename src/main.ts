@@ -3,7 +3,7 @@ import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
 import router from './router'
 
 import './style.css'
-import './assets/tailwind.css'
+import './tailwind.css'
 import App from './App.vue'
 
 const app = createApp(App);

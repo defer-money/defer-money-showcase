@@ -6,7 +6,7 @@
     <main class="flex flex-col w-full self-center max-w-[85rem]">
         <div class="flex flex-col m-0 mt-24 gap-12 md:my-24 md:mx-12 md:gap-24">
             <div class="relative">
-                <img class="hidden md:flex absolute min-w-full min-h-full w-[50rem] object-cover -top-[200%] right-[50%]" src="../assets/bg-ellipse.png" />
+                <img class="hidden md:flex absolute min-w-full min-h-full w-[50rem] object-cover -top-[200%] right-[50%]" src="/assets/bg-ellipse.png" />
                 <p class="font-normal text-[1rem] md:text-[1.4rem] tracking-[0.25rem] text-center">defer.money</p>
                 <h1 class="font-extrabold text-[2rem] md:text-[3.5rem] text-center leading-tight tracking-normal">Privacy Policy</h1>
             </div>

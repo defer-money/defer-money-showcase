@@ -87,15 +87,15 @@ export default {
                             Advantage</span></p>
                     <div class="gap-4 flex flex-row">
                         <div class="flex flex-col items-center gap-3">
-                            <img src="../assets/discount.png" alt="Background" class="w-6 h-6 object-cover" />
+                            <img src="/assets/discount.png" alt="Background" class="w-6 h-6 object-cover" />
                             <p class="text-center">Interest-Free Purchases Stay Intact</p>
                         </div>
                         <div class="flex flex-col items-center gap-3">
-                            <img src="../assets/lock.png" alt="Background" class="w-6 h-6 object-cover" />
+                            <img src="/assets/lock.png" alt="Background" class="w-6 h-6 object-cover" />
                             <p>No Long-Term Credit Lock-Up</p>
                         </div>
                         <div class="flex flex-col items-center gap-3">
-                            <img src="../assets/bill.png" alt="Background" class="w-6 h-6 object-cover" />
+                            <img src="/assets/bill.png" alt="Background" class="w-6 h-6 object-cover" />
                             <p>Simple, Transparent Fees</p>
                         </div>
                     </div>

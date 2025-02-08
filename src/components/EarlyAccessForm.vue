@@ -62,7 +62,7 @@ export default {
               </div>
             </form>
           </div>
-          <img src="../assets/early-access.png" alt="Background" class="hidden lg:block md:max-h-[35rem] md:w-full object-fill" />
+          <img src="/assets/early-access.png" alt="Background" class="hidden lg:block md:max-h-[35rem] md:w-full object-fill" />
         </div>
     </section>
 </template>

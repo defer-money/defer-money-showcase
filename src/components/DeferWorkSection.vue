@@ -5,14 +5,14 @@
 <template>
     <!-- How defer work section -->
     <section id="how-defer-works" class="flex relative items-center">
-        <img class="hidden md:flex absolute min-w-full min-h-full w-[50rem] object-cover -top-[40%] -right-[52%]" src="../assets/bg-ellipse.png" />
+        <img class="hidden md:flex absolute min-w-full min-h-full w-[50rem] object-cover -top-[40%] -right-[52%]" src="/assets/bg-ellipse.png" />
         <div class="flex flex-col w-full md:mx-12 my-12 md:my-24 gap-12 self-center">
             <p class="font-extrabold text-[2rem] md:text-[2.7rem] text-white text-center">How does defer.money work?</p>
             <div class="w-full flex md:flex-row flex-col justify-center items-center md:gap-0 gap-12">
                 <!-- Working Step 1 -->
                 <div class="flex flex-col text-center items-center min-w-72 gap-8">
                 <div class="w-[5.5rem] h-[5.5rem] m-0 p-0">
-                    <img src="../assets/shop-credit-card.png" alt="Background" class="w-full h-full object-cover" />
+                    <img src="/assets/shop-credit-card.png" alt="Background" class="w-full h-full object-cover" />
                 </div>
                 <div>
                     <p class="font-semibold text-[1.5rem] md:text-[2rem] text-white tracking-normal">Shop with your credit card</p>
@@ -35,7 +35,7 @@
                 <!-- Working Step 2 -->
                 <div class="flex flex-col items-center text-center min-w-72 gap-8">
                 <div class="w-[5.5rem] h-[5.5rem] m-0 p-0">
-                    <img src="../assets/defer-payments.png" alt="Background" class="w-full h-full object-cover" />
+                    <img src="/assets/defer-payments.png" alt="Background" class="w-full h-full object-cover" />
                 </div>
                 <div>
                     <p class="font-semibold text-[1.5rem] md:text-[2rem] text-white tracking-normal">Defer your payments</p>
@@ -58,7 +58,7 @@
                 <!-- Working Step 3 -->
                 <div class="flex flex-col text-center items-center min-w-72 gap-8">
                 <div class="w-[5.5rem] h-[5.5rem] m-0 p-0">
-                    <img src="../assets/repay-next-cycle.png" alt="Background" class="w-full h-full object-cover" />
+                    <img src="/assets/repay-next-cycle.png" alt="Background" class="w-full h-full object-cover" />
                 </div>
                 <div>
                     <p class="font-semibold text-[1.5rem] md:text-[2rem] text-white tracking-normal">Repay in the next cycle</p>

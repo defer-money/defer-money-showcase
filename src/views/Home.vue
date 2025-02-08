@@ -21,7 +21,7 @@ import FAQ from '../components/FAQs.vue';
         </div>
         <!-- Introduction image -->
         <div class="w-full h-[20rem] md:h-[40rem]">
-          <img src="../assets/bg-introduction.png" alt="Background" class="w-full h-full object-contain" />
+          <img src="/assets/bg-introduction.png" alt="Background" class="w-full h-full object-contain" />
         </div>
       </section>
       <!-- How defer work -->
