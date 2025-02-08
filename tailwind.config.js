@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'welcome': "url('/src/assets/bg-welcome.png')",
+      },
       colors:{
         'dark-custom-blue': '#050020'
       },

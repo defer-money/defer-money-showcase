@@ -3,7 +3,7 @@
 
 <template>
   <!-- Welcome Section -->
-  <section id="welcome" class="flex flex-col items-center h-full md:min-h-[85vh] bg-[url('src/assets/bg-welcome.png')] md:bg-[auto_550px] bg-contain bg-no-repeat bg-top">
+  <section id="welcome" class="flex flex-col items-center h-full md:min-h-[85vh] bg-welcome md:bg-[auto_550px] bg-contain bg-no-repeat bg-top">
       <div class="flex flex-grow flex-col w-full h-full items-center mt-24 mb-12 md:mb-0 md:mt-0 justify-items-center md:justify-center gap-12">
         <div class="gap-4 items-center justify-center flex flex-col">
           <p class="font-normal text-[1rem] md:text-[1.4rem] tracking-[0.25rem]">Welcome to new era</p>
