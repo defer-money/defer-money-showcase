@@ -11,12 +11,12 @@ import WelcomeSection from './components/WelcomeSection.vue';
 <template>
     <main class="flex flex-col w-full self-center max-w-[85rem]">
       <!-- Welcome -->
-      <WelcomeSection />
+       <WelcomeSection />
       <!-- Introducing Section -->
       <section id="introduction" class="h-full md:min-h-full p-6 gap-12 bg-white bg-opacity-5 md:p-12 rounded-[1.25rem]">
         <div class="flex w-full flex-col justify-center items-center">
           <p class="font-extralight text-[1.25rem] md:text-[1.4rem] tracking-[0.25rem]">Introducing</p>
-          <p class="font-extrabold text-[2rem] md:text-[4rem] tracking-[-0.10rem] text-white">Defer.<span class="text-white bg-gradient-to-r from-[#FFFFFF] from-0% via-[#763AF5] via-48% to-[#A604F2] to-99% bg-clip-text text-transparent">Money</span></p>
+          <p class="font-extrabold text-[2rem] md:text-[4rem] text-white tracking-tight">defer.<span class="bg-gradient-to-r from-[#FFFFFF] from-0% via-[#763AF5] via-48% to-[#A604F2] to-99% bg-clip-text text-transparent">money</span></p>
         </div>
         <!-- Introduction image -->
         <div class="w-full h-[20rem] md:h-[40rem]">

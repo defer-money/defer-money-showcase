@@ -13,21 +13,23 @@ export default {
     data() {
         return {
             vueformSliderState,
-            amount: 1000,
+            amount: 10000,
             deferResult: {
-                fee: 47,
+                fee: 472,
                 interest: 0,
-                totalRepayment: 1047,
+                totalRepayment: 10472,
             },
             emiResult: {
-                fee: 24,
-                interest: 286,
-                totalRepayment: 2048,
+                fee: 236,
+                interest: 532,
+                totalRepayment: 10863,
             },
+            emiPercentDiff: 45,
+            minDuePercentDiff: 31,
             minDueResult: {
-                fee: 59,
-                interest: 186,
-                totalRepayment: 1366,
+                fee: 500,
+                interest: 683,
+                totalRepayment: 10683,
             },
             currencyConversion,
         };
@@ -39,6 +41,8 @@ export default {
             this.deferResult = calculateDeferAmount(amount);
             this.emiResult = calculateEmiAmount(amount);
             this.minDueResult = calculateMinDueAmount(amount);
+            this.emiPercentDiff = Math.round(100 * (this.emiResult.totalRepayment - this.deferResult.totalRepayment) / (this.emiResult.totalRepayment - amount));
+            this.minDuePercentDiff = Math.round(100 * (this.minDueResult.totalRepayment - this.deferResult.totalRepayment) / (this.minDueResult.totalRepayment - amount));
         },
     },
 };
@@ -47,7 +51,7 @@ export default {
 <template>
     <!-- Defer Calculation section -->
     <section id="defer-calculator" class="flex flex-col w-full md:px-12 py-12 md:py-24 gap-12 self-center">
-        <p class="font-extrabold text-[2rem] md:text-[2.7rem] text-white text-center">Let&apos;s Do the Maths</p>
+        <p class="font-extrabold text-[2rem] md:text-[2.7rem] text-white text-center">Let&apos;s Do the Math</p>
         <div class="w-full flex lg:flex-row flex-col justify-between gap-12">
             <!-- Amount Input -->
             <div
@@ -57,13 +61,28 @@ export default {
                     <p class="font-regular text-[.75rem] text-gray">Enter the amount or use the slider to adjust the
                         value</p>
                 </div>
-                <input id="amount" name="amount" @input="calculate" placeholder="Enter Amount" type="number" min="1000"
-                    max="100000" v-model="amount"
-                    class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60 border-white border-opacity-20 border-[0.064rem]" />
-                <input id="slider" type="range" min="1000" max="100000" v-model="amount" @input="calculate"
-                    class="w-full" />
+                <input 
+                    id="amount"
+                    name="amount"
+                    @input="calculate"
+                    placeholder="Enter Amount"
+                    type="number"
+                    min="10000" 
+                    max="500000" 
+                    v-model="amount"
+                    class="block bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60 border-white border-opacity-20 border-[0.064rem]" 
+                />
+                <input 
+                    id="slider" 
+                    type="range" 
+                    min="10000" 
+                    max="500000" 
+                    v-model="amount"
+                    @input="calculate" 
+                    class="w-full"
+                />
                 <div class="flex flex-col gap-4">
-                    <p class="font-semibold text-[1.25rem] text-white tracking-tight">Defer.Mone<span
+                    <p class="font-semibold text-[1.25rem] text-white tracking-tight">defer.mone<span
                             class="bg-gradient-to-r from-[#FFFFFF] from-0% via-[#763AF5] via-48% to-[#A604F2] to-99% bg-clip-text text-transparent">y
                             Advantage</span></p>
                     <div class="gap-4 flex flex-row">
@@ -88,7 +107,7 @@ export default {
                     <thead class="bg-white bg-opacity-5">
                         <tr class="font-semibold">
                             <th class="rounded-l-xl"></th>
-                            <th>Defer.Money</th>
+                            <th>defer.money</th>
                             <th>6-Month EMI</th>
                             <th class="rounded-r-xl">Minimum Due</th>
                         </tr>
@@ -120,11 +139,10 @@ export default {
                             <td>{{ currencyConversion(minDueResult.totalRepayment) }}</td>
                         </tr>
                         <tr class="lastrow bg-gradient-to-r from-[#763AF5] to-[#A604F2] font-semibold">
-                            <td class="rounded-l-xl">Savings with <span class="block">Defer.Money</span></td>
+                            <td class="rounded-l-xl">Savings with <span class="block">defer.money</span></td>
                             <td>{{ }}</td>
-                            <td>Save {{ currencyConversion(emiResult.totalRepayment - deferResult.totalRepayment) }}<span class="block"> with defer.money</span></td>
-                            <td class="rounded-r-xl">Save {{ currencyConversion(minDueResult.totalRepayment - deferResult.totalRepayment) }}<span class="block">with
-                                    defer.money</span></td>
+                            <td>Save {{ currencyConversion(emiResult.totalRepayment - deferResult.totalRepayment) }} ({{ emiPercentDiff }}%)</td>
+                            <td class="rounded-r-xl">Save {{ currencyConversion(minDueResult.totalRepayment - deferResult.totalRepayment) }} ({{ minDuePercentDiff  }}%)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -135,7 +153,7 @@ export default {
                     <thead class="bg-white bg-opacity-5">
                         <tr class="font-semibold p-2">
                             <th class="rounded-l-xl">Scenario #1</th>
-                            <th class="rounded-r-xl">Defer.Money</th>
+                            <th class="rounded-r-xl">defer.money</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -177,9 +195,8 @@ export default {
                             <td>{{ currencyConversion(emiResult.totalRepayment) }}</td>
                         </tr>
                         <tr class=" bg-gradient-to-r from-[#763AF5] to-[#A604F2] font-semibold">
-                            <td class="rounded-l-xl border-0">Savings with Defer.Money</td>
-                            <td class="rounded-r-xl border-0">Save {{ currencyConversion(emiResult.totalRepayment - deferResult.totalRepayment) }}<span
-                                    class="block w-fit"> with defer.money</span></td>
+                            <td class="rounded-l-xl border-0">Savings with defer.money</td>
+                            <td class="rounded-r-xl border-0">Save {{ currencyConversion(emiResult.totalRepayment - deferResult.totalRepayment) }} ({{ emiPercentDiff }}%)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -205,9 +222,8 @@ export default {
                             <td>{{ currencyConversion(minDueResult.totalRepayment) }}</td>
                         </tr>
                         <tr class=" bg-gradient-to-r from-[#763AF5] to-[#A604F2] font-semibold">
-                            <td class="rounded-l-xl border-0">Savings with Defer.Money</td>
-                            <td class="rounded-r-xl border-0">Save {{ currencyConversion(minDueResult.totalRepayment - deferResult.totalRepayment) }}<span
-                                    class="block w-fit"> with defer.money</span></td>
+                            <td class="rounded-l-xl border-0">Savings with defer.money</td>
+                            <td class="rounded-r-xl border-0">Save {{ currencyConversion(minDueResult.totalRepayment - deferResult.totalRepayment) }} ({{ minDuePercentDiff }}%)</td>
                         </tr>
                     </tbody>
                 </table>

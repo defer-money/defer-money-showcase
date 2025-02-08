@@ -1,6 +1,12 @@
 import { createApp } from 'vue'
+import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
+
 import './style.css'
 import './assets/tailwind.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+app.component("dotlottie-vue", DotLottieVue);
+
+app.mount("#app");

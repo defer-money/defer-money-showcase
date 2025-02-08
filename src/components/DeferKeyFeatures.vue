@@ -7,7 +7,7 @@
     <section id="how-defer-works" class="flex relative items-center">
     <img class="hidden md:flex absolute min-w-full min-h-full w-[80rem] object-cover -top-[55%] -left-[40%]" src="../assets/bg-ellipse.png" />
     <div class="flex flex-col w-fit md:mx-12 my-12 md:my-24 gap-12 self-center">
-        <p class="font-extrabold text-[2rem] md:text-[2.7rem] text-white text-center">Why Defer.Money?</p>
+        <p class="font-extrabold text-[2rem] md:text-[2.7rem] text-white text-center">Why defer.money?</p>
         <div class="w-full flex md:flex-row flex-col justify-between items-center gap-12">
             <!-- Feature 1 -->
             <div class="flex flex-col items-center text-center md:items-start md:text-start w-full min-h-[20rem] gap-9 p-9 bg-white bg-opacity-5 rounded-[1.25rem]">

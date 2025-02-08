@@ -20,7 +20,6 @@
       const openedIconPath = document.getElementById(`icon-path-${openFaqId}`);
       openFaq?.classList.remove("max-h-screen", "duration-[2s]");
       openFaq?.classList.add("max-h-0", "duration-700");
-      openButton?.style.setProperty('gap', '0')
       openButton?.style.setProperty('background-color', 'transparent');
       openedtitle?.style.setProperty('opacity', '80%');
       openedtitle?.style.setProperty('color', 'white');
@@ -31,9 +30,8 @@
 
     // Toggle the clicked FAQ
     if (isOpen) {
-      faq?.classList.remove("max-h-screen", "duration-[2s]");
-      faq?.classList.add("max-h-0", "duration-700");
-      button?.classList.replace('gap-6', 'gap-0')
+      faq?.classList.remove("max-h-screen", "duration-700");
+      faq?.classList.add("max-h-0", "duration-[2s]");
       setTimeout(() => {
         button?.style.setProperty('background-color', 'transparent');
         title?.style.setProperty('color', 'white');
@@ -44,9 +42,8 @@
         icon?.classList.toggle("rotate-45");
       }, 550);
     } else {
-      faq?.classList.remove("max-h-0", "duration-[2s]");
-      faq?.classList.add("max-h-screen", "duration-700");
-      button?.classList.replace('gap-0', 'gap-6')
+      faq?.classList.remove("max-h-0", "duration-700");
+      faq?.classList.add("max-h-screen", "duration-[2s]");
       button?.style.setProperty('background-color', '#F2EBFD');
       title?.style.setProperty('color', '#050020');
       iconBg?.style.setProperty('fill', '#050020')
@@ -74,14 +71,14 @@
               class="flex w-full justify-between items-center gap-6"
               >
               <div id="title-1" class="w-fit font-semibold text-xl md:text-2xl text-white text-opacity-80">
-                Will using Defer.Money affect my credit score?
+                Will using defer.money affect my credit score?
               </div>
               <svg id="icon-1" class="h-12 w-12 transition-transform transform" viewBox="0 0 48 49">
                 <rect id="icon-bg-1" y="0.195312" width="48" height="48" rx="24" fill="#F3F5F6"/>
                 <path id="icon-path-1" fill-rule="evenodd" clip-rule="evenodd" d="M25 17.1953H23V23.1953H17V25.1953H23V31.1953H25V25.1953H31V23.1953H25V17.1953Z" fill="#050020"/>
               </svg>
             </div>
-            <div id="faq-1" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg mt-0">
+            <div id="faq-1" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg mt-4">
               No, as long as you repay the deferred amount on time, your credit score will not be negatively impacted. In fact,we help you avoid late payments.
             </div>
           </div>
@@ -92,15 +89,15 @@
               class="flex w-full justify-between items-center gap-6"
               >
               <div id="title-2" class="w-fit font-semibold text-xl md:text-2xl text-white text-opacity-80">
-                Will Defer.Money appear as a loan in my credit history?
+                Will defer.money appear as a loan in my credit history?
               </div>
               <svg id="icon-2" class="h-12 w-12 transition-transform transform" viewBox="0 0 48 49">
                 <rect id="icon-bg-2" y="0.195312" width="48" height="48" rx="24" fill="#F3F5F6"/>
                 <path id="icon-path-2" fill-rule="evenodd" clip-rule="evenodd" d="M25 17.1953H23V23.1953H17V25.1953H23V31.1953H25V25.1953H31V23.1953H25V17.1953Z" fill="#050020"/>
               </svg>
             </div>
-            <div id="faq-2" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg">
-                Yes, deferring a payment through Defer.Money will be reflected as a short-term loan in your credit history, as required by regulations.
+            <div id="faq-2" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg mt-4">
+                Yes, deferring a payment through defer.money will be reflected as a short-term loan in your credit history, as required by regulations.
             </div>
           </div>
           <div class="h-[1px] bg-[#CDD6DA] bg-opacity-[8%] mx-6" />
@@ -117,7 +114,7 @@
                 <path id="icon-path-3" fill-rule="evenodd" clip-rule="evenodd" d="M25 17.1953H23V23.1953H17V25.1953H23V31.1953H25V25.1953H31V23.1953H25V17.1953Z" fill="#050020"/>
               </svg>
             </div>
-            <div id="faq-3" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg">
+            <div id="faq-3" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg mt-4">
                 This will depend on your credit score and overall credit card limit.
             </div>
           </div>
@@ -128,14 +125,14 @@
               class="flex w-full justify-between items-center gap-6"
               >
               <div id="title-4" class="w-fit font-semibold text-xl md:text-2xl text-white text-opacity-80">
-                Will using Defer.Money impact my credit card's limit?
+                Will using defer.money impact my credit card's limit?
               </div>
               <svg id="icon-4" class="h-12 w-12 transition-transform transform" viewBox="0 0 48 49">
                 <rect id="icon-bg-4" y="0.195312" width="48" height="48" rx="24" fill="#F3F5F6"/>
                 <path id="icon-path-4" fill-rule="evenodd" clip-rule="evenodd" d="M25 17.1953H23V23.1953H17V25.1953H23V31.1953H25V25.1953H31V23.1953H25V17.1953Z" fill="#050020"/>
               </svg>
             </div>
-            <div id="faq-4" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg">
+            <div id="faq-4" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg mt-4">
                 Yes, the deferred amount will remain blocked against your credit limit until it’s repaid.
             </div>
           </div>
@@ -153,7 +150,7 @@
                 <path id="icon-path-5" fill-rule="evenodd" clip-rule="evenodd" d="M25 17.1953H23V23.1953H17V25.1953H23V31.1953H25V25.1953H31V23.1953H25V17.1953Z" fill="#050020"/>
               </svg>
             </div>
-            <div id="faq-5" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg">
+            <div id="faq-5" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg mt-4">
                 Yes, rewards or cashback on the original transaction will remain unaffected.
             </div>
           </div>
@@ -171,7 +168,7 @@
                 <path id="icon-path-6" fill-rule="evenodd" clip-rule="evenodd" d="M25 17.1953H23V23.1953H17V25.1953H23V31.1953H25V25.1953H31V23.1953H25V17.1953Z" fill="#050020"/>
               </svg>
             </div>
-            <div id="faq-6" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg">
+            <div id="faq-6" class="transition-all overflow-hidden max-h-0 ease-in-out duration-[2s] text-dark-custom-blue text-base md:text-lg mt-4">
                 No, you can only defer a payment once. The amount you can defer will be decided based on the credit card statement.
             </div>
           </div>
