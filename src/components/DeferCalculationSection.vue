@@ -141,8 +141,8 @@ export default {
                         <tr class="lastrow bg-gradient-to-r from-[#763AF5] to-[#A604F2] font-semibold">
                             <td class="rounded-l-xl">Savings with <span class="block">defer.money</span></td>
                             <td>{{ }}</td>
-                            <td>Save {{ currencyConversion(emiResult.totalRepayment - deferResult.totalRepayment) }} ({{ emiPercentDiff }}%)</td>
-                            <td class="rounded-r-xl">Save {{ currencyConversion(minDueResult.totalRepayment - deferResult.totalRepayment) }} ({{ minDuePercentDiff  }}%)</td>
+                            <td> {{ currencyConversion(emiResult.totalRepayment - deferResult.totalRepayment) }} ({{ emiPercentDiff }}%)</td>
+                            <td class="rounded-r-xl"> {{ currencyConversion(minDueResult.totalRepayment - deferResult.totalRepayment) }} ({{ minDuePercentDiff  }}%)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -196,7 +196,7 @@ export default {
                         </tr>
                         <tr class=" bg-gradient-to-r from-[#763AF5] to-[#A604F2] font-semibold">
                             <td class="rounded-l-xl border-0">Savings with defer.money</td>
-                            <td class="rounded-r-xl border-0">Save {{ currencyConversion(emiResult.totalRepayment - deferResult.totalRepayment) }} ({{ emiPercentDiff }}%)</td>
+                            <td class="rounded-r-xl border-0">{{ currencyConversion(emiResult.totalRepayment - deferResult.totalRepayment) }} ({{ emiPercentDiff }}%)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -223,7 +223,7 @@ export default {
                         </tr>
                         <tr class=" bg-gradient-to-r from-[#763AF5] to-[#A604F2] font-semibold">
                             <td class="rounded-l-xl border-0">Savings with defer.money</td>
-                            <td class="rounded-r-xl border-0">Save {{ currencyConversion(minDueResult.totalRepayment - deferResult.totalRepayment) }} ({{ minDuePercentDiff }}%)</td>
+                            <td class="rounded-r-xl border-0"> {{ currencyConversion(minDueResult.totalRepayment - deferResult.totalRepayment) }} ({{ minDuePercentDiff }}%)</td>
                         </tr>
                     </tbody>
                 </table>

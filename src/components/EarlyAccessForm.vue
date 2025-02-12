@@ -89,7 +89,7 @@ export default {
                   </div>
                 </div>
                 <div>
-                  <input id="phoneNumber" name="phoneNumber" placeholder="PhoneNumber" type="number" minlength="10" maxlength="10" v-model="formData.phoneNumber" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" :disabled="loading" />
+                  <input id="phoneNumber" name="phoneNumber" placeholder="Phone Number" type="number" minlength="10" maxlength="10" v-model="formData.phoneNumber" class="bg-white bg-opacity-5 p-3 w-full rounded-lg text-white text-opacity-60" :disabled="loading" />
                   <p v-if="errors.phoneNumber" class="error">{{ errors.phoneNumber }}</p>
                 </div>
                 <div>
