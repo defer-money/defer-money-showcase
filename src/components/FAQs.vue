@@ -3,7 +3,7 @@
 
   function toggleFaq(id: number):void {
     const faq = document.getElementById(`faq-${id}`);
-    const button = document.getElementById(`button-${id}`);
+    // const button = document.getElementById(`button-${id}`);
     const icon = document.getElementById(`icon-${id}`);
     const title = document.getElementById(`title-${id}`);
     const isOpen = faq?.classList.contains('h-auto');
@@ -11,7 +11,7 @@
     // Close the currently open FAQ if it's different
     if (openFaqId && openFaqId !== id) {
       const openFaq = document.getElementById(`faq-${openFaqId}`);
-      const openButton = document.getElementById(`button-${openFaqId}`);
+      // const openButton = document.getElementById(`button-${openFaqId}`);
       const openedIcon = document.getElementById(`icon-${openFaqId}`);
       const openedTitle = document.getElementById(`title-${openFaqId}`);
       
