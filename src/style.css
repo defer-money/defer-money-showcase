@@ -15,7 +15,6 @@ html {
 
 body {
   height: 100%;
- 
   background-color: #050020;
   color: #ffffff;
 }
@@ -25,6 +24,54 @@ body {
   flex-direction: column;
   min-height: 100vh;
   padding: 1rem;
+}
+
+/* Button animations */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(118, 58, 245, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Form input animations */
+input, textarea {
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(166, 4, 242, 0.1);
+  outline: none;
+  border: 1px solid rgba(166, 4, 242, 0.5);
+}
+
+/* Link animations */
+a {
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* FAQ animations */
+.faq-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-button {
+  transition: background-color 0.3s ease;
+}
+
+.faq-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media (min-width: 768px) {
